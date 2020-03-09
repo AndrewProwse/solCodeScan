@@ -1,6 +1,6 @@
-# CountCat
+# solCodeScan
 
-CountCat performs a quick and dirty analysis of lines of SPARC Solaris C-source code and tries to determine the effort required in porting to a Linux based system.  During the analysis of the source code, ccat will flag any areas that may be of concern during the porting of the code.
+solCodeScan performs a quick and dirty analysis of lines of SPARC Solaris C-source code and tries to determine the effort required in porting to a Linux based system.  During the analysis of the source code, scs will flag any areas that may be of concern during the porting of the code.
 
 ## Supported OS:
 
@@ -8,9 +8,9 @@ Both Solaris and Linux are supported by this release of countcat.
 
 ## Installation:
 
-To install ccat, as root, untar the tarball in the / directory.
+To install scs, as root, untar the tarball in the / directory.
 
-On first run of the ccat script, it will ask you for the source system OS
+On first run of the scs script, it will ask you for the source system OS
 level, and also the OS of the target system.
 
 ## Requirements:
@@ -19,34 +19,34 @@ Requires ksh to be installed on the source system
 
 ---
 
-## Running the ccat Script:
+## Running the scs Script:
 
-Once the installation is complete, just run ccat in the root of the source tree.
+Once the installation is complete, just run scs in the root of the source tree.
 
 Example:
 ````
     # cd [source_code_dir]
-    # /opt/ccat/bin/ccat [clean|reset|help]
+    # /opt/scs/bin/scs [clean|reset|help]
 ````
 
-During the execution of the script, ccat will provide a quick summary on the console.  In addidtion, ccat will leave an html formatted report, ccat.html, and a more indepth, detailed report called ccat_detail.html.
+During the execution of the script, scs will provide a quick summary on the console.  In addidtion, scs will leave an html formatted report, scs.html, and a more indepth, detailed report called scs.html.
 
 This report, in addition to the Migration Guide, will help to identify occurances and level of difficulty of any possible issues on migrating code from SPARC Solaris to x86 Linux.
 
-ccat is to be used in conjuction with the Migration Guide.
+scs is to be used in conjuction with the Migration Guide.
 
-## ccat Command Line Options:
+## scs Command Line Options:
 
-ccat has three command line options:
+scs has three command line options:
 
   - help: help will display a description of the command line options.
-  - quick: ccat just performs a quick file and line count of the c-source code and header files.
-  - clean: ccat will restore itself back to it's initial _install fresh_ condition before running.  This allows for selecting which release of Solaris the source code is coming from, and to which release of Linux the code is being ported to.
-  - reset: eset is the same as clean, but does not launch the ccat script after cleaning.
+  - quick: scs just performs a quick file and line count of the c-source code and header files.
+  - clean: scs will restore itself back to it's initial _install fresh_ condition before running.  This allows for selecting which release of Solaris the source code is coming from, and to which release of Linux the code is being ported to.
+  - reset: eset is the same as clean, but does not launch the scs script after cleaning.
 
 ## Script Flow:
 
-The initial phase of ccat inventories the source code tree and counts the number
+The initial phase of scs inventories the source code tree and counts the number
 of file and the total num ber of lines of both C-source and header files.
 
 Next, the header files are compared and sorted as follows:
@@ -61,4 +61,4 @@ Scripts are also searched, as they will have differences between the two platfor
 
 # Features/Bugs:
 
-Currently ccat does not distinguish comment lines from code.
+Currently scs does not distinguish comment lines from code.

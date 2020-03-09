@@ -1,5 +1,0 @@
-sema_destroy
-sema_init
-sema_post
-sema_trywait
-sema_wait
